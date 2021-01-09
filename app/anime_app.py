@@ -37,16 +37,16 @@ def load_data() -> pd.DataFrame:
     data_df: pd.DataFrame = data_df.dropna()
     data_df: pd.DataFrame = data_df[data_df.rating_x != -1]
 
-    # remove all users that gave more than 250 reviews and anime's that have less than 250 reviews
+    # remove all users that gave more than 250 reviews and anime"s that have less than 250 reviews
     min_anime_ratings:int = 250
-    filter_anime: pd.Series = data_df['anime_id'].value_counts() > min_anime_ratings
+    filter_anime: pd.Series = data_df["anime_id"].value_counts() > min_anime_ratings
     filter_anime: pd.DataFrame = filter_anime[filter_anime].index.tolist()
 
     min_user_ratings:int = 250
-    filter_users: pd.Series = data_df['user_id'].value_counts() > min_user_ratings
+    filter_users: pd.Series = data_df["user_id"].value_counts() > min_user_ratings
     filter_users: pd.DataFrame = filter_users[filter_users].index.tolist()
     data_df: pd.DataFrame  = data_df[
-        ( data_df['anime_id'].isin(filter_anime)) & (data_df['user_id'].isin(filter_users))]
+        ( data_df["anime_id"].isin(filter_anime)) & (data_df["user_id"].isin(filter_users))]
 
     # take a sample of 100,000
     data_df: pd.DataFrame  = data_df.sample(n=100000, random_state=42)
@@ -98,13 +98,13 @@ render_recommendations: bool = st.sidebar.button("Get Recommendation")
 
 if render_recommendations:
     for user_id in user_ids:
-        # get all anime's
+        # get all anime"s
         anime_ids: pd.Series = data_df.anime_id.unique()
 
         # create a user data frame to predict ratings
-        user_to_predict = {'user_id': [user_id] * len(anime_ids),
-                        'anime_id': anime_ids,
-                        'rating_x': [0] * len(anime_ids)}
+        user_to_predict = {"user_id": [user_id] * len(anime_ids),
+                        "anime_id": anime_ids,
+                        "rating_x": [0] * len(anime_ids)}
         predict_data_df: pd.DataFrame = pd.DataFrame(user_to_predict)
 
         # create data object from dataframe
@@ -112,7 +112,7 @@ if render_recommendations:
         predict_data: Dataset = Dataset.load_from_df(predict_data_df, reader)
 
         # read trained model
-        algo: SVD = load(f'{script_dir}/svd.pickle')[1]
+        algo: SVD = load(f"{script_dir}/svd.pickle")[1]
 
         # predict ratings
         testset: Trainset = predict_data.build_full_trainset().build_testset()
@@ -126,8 +126,8 @@ if render_recommendations:
             st.markdown(f"## ***User id: {uid}***")
             st.subheader(f"Recomandations (Users anime are not included):")
             st.dataframe(pd.DataFrame([data_df.loc[data_df.anime_id == iid, 
-                                        'name'].iloc[0] for (iid, _) in user_ratings]))
+                                        "name"].iloc[0] for (iid, _) in user_ratings]))
 
         st.subheader(f"Users Anime's:")
-        st.dataframe(data_df[data_df.user_id==user_id].sort_values(by='rating_x', 
+        st.dataframe(data_df[data_df.user_id==user_id].sort_values(by="rating_x", 
                         ascending=False)["name"].reset_index(drop=True))
