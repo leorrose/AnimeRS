@@ -4,17 +4,17 @@
 
 # AnimeRs
 
-An anime recomendation system.
+An anime recommendation system.
 
-The target of this Project is to reserch and create an anime recomendation system. 
+The target of this Project is to research and create an anime recommendation system.
 
-This Project was created with <b> Python, suprise, pandas, numpy and more liberais</b>.
+This Project was created with <b>Python, surprise, pandas, numpy and more liberais</b>.
 
 
 ### Project Research:
-In order to understand the steps and what we did you are welcome to look at the [reserch jupyter notebook](https://github.com/leorrose/AnimeRS/blob/main/research_notebook.ipynb).
+In order to understand the steps and what we did you are welcome to look at [the research jupyter notebook](https://github.com/leorrose/AnimeRS/blob/main/research_notebook.ipynb).
 
-We tested varios recommender system provided by suprise and theese are the results we got:
+We tested various recommender system provided by surprise and these are the results we got:
 
 **ADD TABLE**
 
@@ -30,5 +30,5 @@ We tested varios recommender system provided by suprise and theese are the resul
 
 Please let me know if you find bugs or something that needs to be fixed.
 
-Hope you enjoy.
+Hope you enjoy it.
 
