@@ -19,40 +19,6 @@ from surprise.trainset import Trainset
 script_dir: str = os.path.dirname(os.path.realpath(__file__))
 data_path: str = f"{script_dir}/data"
 
-def download_zip(url: str, extract_path:str = None) -> None:
-  """
-  Method to download a zip from url and extract to given directory.
-
-  Args:
-    url (str): the zip url
-    extract_path (str): the path to extract if none will extract in the 
-    running directory. defaults to None
-  """
-  # get zip
-  response: requests.Response = requests.get(url)
-  # test status code is 200
-  response.raise_for_status()
-  # read response content (zip) into zipfile object
-  zip: zipfile.ZipFile = zipfile.ZipFile(io.BytesIO(response.content))
-  # extract zip to given path
-  zip.extractall(extract_path)
-
-def download_data() -> None:
-  """
-  Method to download partial data set from our github repository
-  """
-  # delete old folder
-  if not os.path.exists(f'{data_path}/rating.csv') or not os.path.exists(f'{data_path}/anime.csv'):
-    if os.path.exists(f'{data_path}'):
-        shutil.rmtree(f'{data_path}')
-
-    # github repository base url
-    base_url: str = "https://github.com/leorrose/anime/raw/main"
-    # partial image data set url
-    anime_data_url: str = f"{base_url}/anime_data.zip?raw=true"
-    # download zip
-    download_zip(anime_data_url, data_path)
-
 
 @st.cache
 def load_data() -> pd.DataFrame:
@@ -119,8 +85,6 @@ def get_top_n(predictions: List[Prediction], n: int=10
     
     return top_n
 
-
-download_data()
 data_df: pd.DataFrame = load_data()
 
 # main view
