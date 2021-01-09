@@ -1,1 +1,0 @@
-web: streamlit run app/anime_app.py
