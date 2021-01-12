@@ -8,7 +8,7 @@ An anime recommendation system.
 
 The purpose of this project is to research and create an anime recommendation system.
 
-This project was created with **Python (version 3.9.1), surprise, pandas, numpy and more liberais**.
+This project was created with **Python (version 3.9.1), surprise, pandas, numpy and more libraries**.
 
 ## Project Research
 
