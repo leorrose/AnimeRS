@@ -68,7 +68,7 @@ We tested various recommender systems provided by surprise and these are the res
 ## Project Setup and Run
 
 1. Clone this repository.
-2. Go to project folder: `cd AnimeRS`
+2. Open cmd/shell/terminal and go to project folder: `cd AnimeRS`
 3. Install project dependencies: `pip install -r requirements.txt`
 4. Run the streamlit app: `streamlit run .\AnimeRS\anime_app.py
 5. Enjoy the application.
