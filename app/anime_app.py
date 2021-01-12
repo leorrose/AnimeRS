@@ -123,11 +123,11 @@ if render_recommendations:
                                                             n=number_of_recommendations)
 
         for uid, user_ratings in top_n.items():
-            st.markdown(f"## ***User id: {uid}***")
-            st.subheader(f"Recomandations (Users anime are not included):")
+            st.markdown(f"## ***User Id: {uid}***")
+            st.subheader(f"Recomandations (user's animes are not included):")
             st.dataframe(pd.DataFrame([data_df.loc[data_df.anime_id == iid, 
                                         "name"].iloc[0] for (iid, _) in user_ratings]))
 
-        st.subheader(f"Users Anime's:")
+        st.subheader(f"User's Animes:")
         st.dataframe(data_df[data_df.user_id==user_id].sort_values(by="rating_x", 
                         ascending=False)["name"].reset_index(drop=True))
