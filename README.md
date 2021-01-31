@@ -6,15 +6,15 @@
 
 An anime recommendation system.
 
-The target of this Project is to research and create an anime recommendation system.
+The purpose of this project is to research and create an anime recommendation system.
 
-This Project was created with **Python, surprise, pandas, numpy and more liberais**.
+This project was created with **Python (version 3.9.1), surprise, pandas, numpy and more libraries**.
 
 ## Project Research
 
 In order to understand the steps and what we did you are welcome to look at [the research jupyter notebook](https://github.com/leorrose/AnimeRS/blob/main/research_notebook.ipynb).
 
-We tested various recommender system provided by surprise and these are the results we got:
+We tested various recommender systems provided by surprise and these are the results we got:
 
 ### **User-Based CF**
 
@@ -68,11 +68,10 @@ We tested various recommender system provided by surprise and these are the resu
 ## Project Setup and Run
 
 1. Clone this repository.
-2. Go to project folder: `cd AnimeRS`
+2. Open cmd/shell/terminal and go to project folder: `cd AnimeRS`
 3. Install project dependencies: `pip install -r requirements.txt`
-4. run the streamlit app: `streamlit run ./AnimeRS/anime_app.py
+4. run the streamlit app: `streamlit run ./app/anime_app.py
 5. enjoy the application.
-
 Please let me know if you find bugs or something that needs to be fixed.
 
 Hope you enjoy it.
