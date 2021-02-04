@@ -70,4 +70,5 @@ We tested various recommender systems provided by surprise and these are the res
 5. Enjoy the application.
 
 Please let me know if you find bugs or something that needs to be fixed.
+
 Hope you enjoy it.
