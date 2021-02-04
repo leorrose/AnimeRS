@@ -1,7 +1,3 @@
-<p align="center">
-   <img src="https://img.shields.io/badge/-Collage%20Project-informational" />
-</p>
-
 # AnimeRs
 
 An anime recommendation system.
@@ -70,8 +66,8 @@ We tested various recommender systems provided by surprise and these are the res
 1. Clone this repository.
 2. Open cmd/shell/terminal and go to project folder: `cd AnimeRS`
 3. Install project dependencies: `pip install -r requirements.txt`
-4. run the streamlit app: `streamlit run ./app/anime_app.py`
-5. enjoy the application.
-Please let me know if you find bugs or something that needs to be fixed.
+4. Run the streamlit app: `streamlit run ./app/anime_app.py`
+5. Enjoy the application.
 
+Please let me know if you find bugs or something that needs to be fixed.
 Hope you enjoy it.
