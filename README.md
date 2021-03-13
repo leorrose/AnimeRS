@@ -1,6 +1,6 @@
 # AnimeRs
 
-An anime recommendation system.
+An anime recommendation system
 
 The purpose of this project is to research and create an anime recommendation system.
 
