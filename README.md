@@ -73,4 +73,4 @@ We tested various recommender systems provided by surprise and these are the res
 
 Please let me know if you find bugs or something that needs to be fixed.
 
-Hope you enjoy it
+Hope you enjoy it.
